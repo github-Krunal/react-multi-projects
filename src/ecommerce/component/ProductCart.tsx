@@ -1,30 +1,47 @@
-import { Card, CardActions, CardContent, CardMedia, IconButton, Typography } from "@mui/material"
-import { useGetProductsQuery } from "../../services/ecommerce.service"
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  useCreateCartMutation,
+  useGetProductsQuery,
+} from "../../services/ecommerce.service";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 
-const ProductCart=()=>{
-    const {data:products}=useGetProductsQuery()
-    return (
-      <div style={{display:"flex",flexWrap:"wrap"}}>
-        {
-            products?.map((product)=>(
-                <Card sx={{ maxWidth: 345 }} key={product.ID} style={{marginRight:"10px"}}>
-                <CardMedia
-                  sx={{ height: 140 }}
-                  image={product.ImageUrl}
-                  title="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {product.ID}-{product.Title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                  {product.Description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))
-        }
+import { Product } from "../../model/product.model";
+const ProductCart = () => {
+  const { data: products } = useGetProductsQuery();
+  const [createCart, { isLoading }] = useCreateCartMutation();
+  function setProduct(product: Product) {
+    createCart(product);
+  }
+  return (
+    <div>
+      <div style={{ display: "flex", flexWrap: "wrap", padding: "10px" }}>
+        {products?.map((product) => (
+          <Card
+            sx={{ maxWidth: 345 }}
+            key={product.ID}
+            style={{ marginRight: "10px" }}
+          >
+            <CardMedia
+              sx={{ height: 140 }}
+              image={product.ImageUrl}
+              title="green iguana"
+            />
+            <CardContent>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                {product.ID}-{product.Title}
+                <ShoppingBagIcon
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setProduct(product)}
+                ></ShoppingBagIcon>
+              </div>
+              <Typography variant="body2" color="text.secondary">
+                {product.Description}
+              </Typography>
+            </CardContent>
+          </Card>
+        ))}
       </div>
-    );
-}
-export default ProductCart
+    </div>
+  );
+};
+export default ProductCart;
