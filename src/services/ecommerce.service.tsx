@@ -4,6 +4,7 @@ import { Product } from '../model/product.model'
 export const productApi = createApi({
     reducerPath: 'ProductApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:4000/' }),
+    tagTypes:['deleteCart'],
     endpoints: (builder) => ({
       getProducts: builder.query<Product[], void>({
         query: () => `Products`,
@@ -17,7 +18,16 @@ export const productApi = createApi({
       }),
       getCart: builder.query<Product[], void>({
         query: () => `Carts`,
+        providesTags:['deleteCart']
+      }),
+
+      deleteCart: builder.mutation({
+        query: (cartID) => ({
+          url: `/Carts/${cartID}`,
+          method: 'DELETE',
+        }),
+        invalidatesTags:['deleteCart']
       }),
     }),
   })
-  export const { useGetProductsQuery,useCreateCartMutation,useGetCartQuery } = productApi
+  export const { useGetProductsQuery,useCreateCartMutation,useGetCartQuery,useDeleteCartMutation } = productApi

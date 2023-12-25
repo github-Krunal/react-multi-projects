@@ -1,8 +1,14 @@
-import { useGetCartQuery } from '../../services/ecommerce.service';
+import { Product } from '../../model/product.model';
+import { useDeleteCartMutation, useGetCartQuery } from '../../services/ecommerce.service';
 import './cart.scss';
 const Cart = () => {
-    const {data:products}=useGetCartQuery();
-
+    const {data:products}=useGetCartQuery(undefined,{
+        refetchOnMountOrArgChange:true
+    });
+    const [deleteCart, { isLoading }] = useDeleteCartMutation();
+   function deleteProductHandler(product: Product) {
+     deleteCart(product.ID);
+   }
   return (
     <div style={{ marginTop: "10px" }}>
       <h1>Shopping Cart</h1>
@@ -16,31 +22,26 @@ const Cart = () => {
           <label className="product-line-price">Total</label>
         </div>
 
-{
-    products?.map((product=>(
-<div className="product">
-          <div className="product-image">
-            <img src={product.ImageUrl} />
+        {products?.map((product) => (
+          <div className="product" key={product.ID}>
+            <div className="product-image">
+              <img src={product.ImageUrl} />
+            </div>
+            <div className="product-details">
+              <div className="product-title">{product.Title}</div>
+              <p className="product-description">{product.Description}</p>
+            </div>
+            <div className="product-price">12.99</div>
+            <div className="product-quantity">
+              {/* <input type="number" value="2" min="1"/> */}
+            </div>
+            <div className="product-removal">
+              <button className="remove-product" onClick={()=>deleteProductHandler(product)}>Remove</button>
+            </div>
+            <div className="product-line-price">25.98</div>
           </div>
-          <div className="product-details">
-            <div className="product-title">{product.Title}</div>
-            <p className="product-description">
-              {product.Description}
-            </p>
-          </div>
-          <div className="product-price">12.99</div>
-          <div className="product-quantity">
-            {/* <input type="number" value="2" min="1"/> */}
-          </div>
-          <div className="product-removal">
-            <button className="remove-product">Remove</button>
-          </div>
-          <div className="product-line-price">25.98</div>
-        </div>
-    )))
-        
-    }
-     
+        ))}
+
         <div className="totals">
           <div className="totals-item">
             <label>Subtotal</label>
