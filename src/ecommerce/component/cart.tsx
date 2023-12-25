@@ -1,14 +1,20 @@
+import { useContext, useEffect } from 'react';
+import CartContext from '../../context/CartContext';
 import { Product } from '../../model/product.model';
 import { useDeleteCartMutation, useGetCartQuery } from '../../services/ecommerce.service';
 import './cart.scss';
 const Cart = () => {
-    const {data:products}=useGetCartQuery(undefined,{
+  const {setCartItem}=useContext(CartContext)
+    const {data:products,isLoading:productLoading,isFetching}=useGetCartQuery(undefined,{
         refetchOnMountOrArgChange:true
     });
     const [deleteCart, { isLoading }] = useDeleteCartMutation();
    function deleteProductHandler(product: Product) {
      deleteCart(product.ID);
    }
+   useEffect(()=>{
+    setCartItem(products?.length)
+   },[!isFetching])
   return (
     <div style={{ marginTop: "10px" }}>
       <h1>Shopping Cart</h1>

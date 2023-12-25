@@ -19,13 +19,5 @@
       "ImageUrl": "https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvc2F8ZW58MHx8MHx8fDA%3D"
     }
   ],
-  "Carts": [
-    {
-      "ID": 3,
-      "Title": "Dosa",
-      "Description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto eius expedita mollitia maxime iusto, maiores optio libero vero deleniti ipsa?",
-      "ImageUrl": "https://images.unsplash.com/photo-1694849789325-914b71ab4075?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRvc2F8ZW58MHx8MHx8fDA%3D",
-      "id": 3
-    }
-  ]
+  "Carts": []
 }

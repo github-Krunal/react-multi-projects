@@ -9,7 +9,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useContext } from "react";
+import CartContext from "../../context/CartContext";
 const Topbar = () => {
+  const {totalCartItem}=useContext(CartContext)
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
@@ -35,7 +38,7 @@ const Topbar = () => {
                 </Link>
             </Typography>
             <Link to="/cart">
-            <Badge badgeContent={"0"} color="secondary" >
+            <Badge badgeContent={totalCartItem||'0'} color="secondary" >
               <ShoppingCartIcon />
             </Badge>
             </Link>
