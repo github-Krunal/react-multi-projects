@@ -4,6 +4,7 @@ import './App.css';
 import CartContext from './context/CartContext';
 import Cart from './ecommerce/component/cart';
 import ProductCart from './ecommerce/component/ProductCart';
+import ProductDetails from './ecommerce/component/productDetails';
 import Topbar from './ecommerce/component/topbar';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route element={<Topbar />}>
             <Route path="/" element={<ProductCart />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/product-details/:productID" element={<ProductDetails />} />
           </Route>
         </Routes>
       </Router>

@@ -1,16 +1,22 @@
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Chip, Typography } from "@mui/material";
 import {
   useCreateCartMutation,
   useGetProductsQuery,
 } from "../../services/ecommerce.service";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
-
 import { Product } from "../../model/product.model";
+import CartContext from "../../context/CartContext";
+import { useContext } from "react";
+import { currencyFormat } from "../../utility/currencyFormat";
+import { Link } from "react-router-dom";
 const ProductCart = () => {
+  const {totalCartItem,setCartItem}=useContext(CartContext)
   const { data: products } = useGetProductsQuery();
-  const [createCart, { isLoading }] = useCreateCartMutation();
+  const [createCart] = useCreateCartMutation();
   function setProduct(product: Product) {
     createCart(product);
+    let totalItem=totalCartItem+1;
+    setCartItem(totalItem)
   }
   return (
     <div>
@@ -18,7 +24,7 @@ const ProductCart = () => {
         {products?.map((product) => (
           <Card
             sx={{ maxWidth: 345 }}
-            key={product.ID}
+            key={product.id}
             style={{ marginRight: "10px" }}
           >
             <CardMedia
@@ -28,7 +34,8 @@ const ProductCart = () => {
             />
             <CardContent>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                {product.ID}-{product.Title}
+                <Link to={'/product-details/'+product.id}>{product.id}-{product.Title}</Link>
+                <Chip label={currencyFormat(product.Price)} variant="outlined" />
                 <ShoppingBagIcon
                   style={{ cursor: "pointer" }}
                   onClick={() => setProduct(product)}

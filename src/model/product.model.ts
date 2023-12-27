@@ -1,6 +1,7 @@
 export class Product{
-    public ID?:string;
+    public id?:string;
     public Title?:string;
     public Description?:string;
     public ImageUrl?:string;
+    public Price?:number;
 }

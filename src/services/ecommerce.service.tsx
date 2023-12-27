@@ -9,6 +9,13 @@ export const productApi = createApi({
       getProducts: builder.query<Product[], void>({
         query: () => `Products`,
       }),
+      getAllData: builder.query<any[], string>({
+        query: (objectName) => `${objectName}`,
+      }),
+      getSingleProduct: builder.query<Product, number>({
+        query: (id) => `Products/${id}`,
+
+      }),
       createCart: builder.mutation({
         query: (product:Product) => ({
           url: '/Carts', 
@@ -30,4 +37,4 @@ export const productApi = createApi({
       }),
     }),
   })
-  export const { useGetProductsQuery,useCreateCartMutation,useGetCartQuery,useDeleteCartMutation } = productApi
+  export const { useGetProductsQuery,useCreateCartMutation,useGetCartQuery,useDeleteCartMutation,useGetSingleProductQuery,useGetAllDataQuery } = productApi

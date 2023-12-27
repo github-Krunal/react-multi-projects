@@ -7,36 +7,28 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
+import Carousal from "./carousal";
 const Topbar = () => {
   const {totalCartItem}=useContext(CartContext)
+
   return (
     <div>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
+          <Toolbar sx={{ bgcolor: 'lightslategrey' }}>
+        
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 <Link to='/' style={{textDecoration:'none'}}>
                 <div style={{display:'flex',alignItems:'center'}}>
-                <img src="https://w7.pngwing.com/pngs/911/911/png-transparent-hamburger-burger-king-whopper-fast-food-restaurant-daily-burger-text-fast-food-restaurant-logo-thumbnail.png" alt="" style={{width:'40px',height:'40px'}}/>
-                <div style={{marginLeft:'15px',color:'white'}}>
-                      Food App
-                </div>
+                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg" alt="" />
                 </div>
                 </Link>
             </Typography>
+            <input type="text" placeholder="search"/>
+
             <Link to="/cart">
             <Badge badgeContent={totalCartItem||'0'} color="secondary" >
               <ShoppingCartIcon />
@@ -45,7 +37,10 @@ const Topbar = () => {
           </Toolbar>
         </AppBar>
       </Box>
-      <Outlet></Outlet>
+      <div style={{padding:'30px'}}>
+      <Carousal/>
+      {/* <Outlet></Outlet> */}
+      </div>
     </div>
   );
 };
