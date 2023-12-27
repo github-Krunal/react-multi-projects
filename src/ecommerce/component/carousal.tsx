@@ -7,13 +7,9 @@ const Carousal = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (carousualData && carousualData.length) {
-        if (activeSlide === carousualData?.length) {
-          setActiveSlide(0);
-        } else {
-          setActiveSlide(
-            (prevActiveSlide) => (prevActiveSlide + 1) % carousualData.length
-          );
-        }
+        setActiveSlide(
+          (prevActiveSlide) => (prevActiveSlide + 1) % carousualData.length
+        );
       }
     }, 3000);
     return () => clearInterval(interval);
