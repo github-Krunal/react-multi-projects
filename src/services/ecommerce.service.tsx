@@ -9,12 +9,14 @@ export const productApi = createApi({
       getProducts: builder.query<Product[], void>({
         query: () => `Products`,
       }),
+      getDashboardProduct: builder.query<Product[], void>({
+        query: () => `DashboardProduct`,
+      }),
       getAllData: builder.query<any[], string>({
         query: (objectName) => `${objectName}`,
       }),
       getSingleProduct: builder.query<Product, number>({
         query: (id) => `Products/${id}`,
-
       }),
       createCart: builder.mutation({
         query: (product:Product) => ({
@@ -37,4 +39,4 @@ export const productApi = createApi({
       }),
     }),
   })
-  export const { useGetProductsQuery,useCreateCartMutation,useGetCartQuery,useDeleteCartMutation,useGetSingleProductQuery,useGetAllDataQuery } = productApi
+  export const { useGetProductsQuery,useCreateCartMutation,useGetCartQuery,useDeleteCartMutation,useGetSingleProductQuery,useGetAllDataQuery,useGetDashboardProductQuery } = productApi

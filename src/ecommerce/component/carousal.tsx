@@ -18,7 +18,9 @@ const Carousal = () => {
   return (
     <div>
       {carousualData && carousualData.length && (
-        <img src={carousualData[activeSlide].ImageUrl} alt="" />
+        <div style={{width:'100%',height:'200px'}}>
+        <img src={carousualData[activeSlide].ImageUrl} alt="" style={{width:'100%',height:'100%',objectFit:'cover'}}/>
+        </div>
       )}
     </div>
   );
