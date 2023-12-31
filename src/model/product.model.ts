@@ -4,5 +4,6 @@ export class Product{
     public Title?:string;
     public Description?:string;
     public ImageUrl?:string;
+    public Category?:string;
     public Price?:number;
 }

@@ -9,12 +9,7 @@
     }
   ],
   "Carts": [
-    {
-      "RecordID": "2",
-      "ImageUrl": "https://rukminim1.flixcart.com/image/210/210/kokdci80/dslr-camera/v/e/x/z-24-200mm-z5-nikon-original-imag2zuekuxgxsgg.jpeg?q=80",
-      "Title": "Camera",
-      "id": 1
-    }
+  
   ],
   "Carousual": [
     {
@@ -31,12 +26,23 @@
     {
       "RecordID": "1",
       "ImageUrl": "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/a/t/8/-original-imagwy8dujphzvng.jpeg?q=70",
-      "Title": "Laptop"
+      "Title": "Laptop",
+      "Price": 1000,
+      "Category":"Laptop"
     },
     {
       "RecordID": "2",
       "ImageUrl": "https://rukminim1.flixcart.com/image/210/210/kokdci80/dslr-camera/v/e/x/z-24-200mm-z5-nikon-original-imag2zuekuxgxsgg.jpeg?q=80",
-      "Title": "Camera"
+      "Title": "Camera",
+      "Price": 2000,
+      "Category":"Camera"
+    },
+    {
+      "RecordID": "3",
+      "ImageUrl": "https://rukminim2.flixcart.com/image/312/312/xif0q/computer/n/o/s/-original-imaghzah9mjvukjz.jpeg?q=70",
+      "Title": "Dell-Laptop",
+      "Price": 3000,
+      "Category":"Laptop"
     }
   ]
 }

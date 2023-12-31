@@ -1,8 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import { AppBar, Badge, Box, Toolbar, Typography } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Carousal from "./carousal";
-import ToysCart from "./toysCart";
+import SearchIcon from '@mui/icons-material/Search';
 const Topbar = () => {
   return (
     <div>
@@ -19,8 +18,9 @@ const Topbar = () => {
                 </div>
               </Link>
             </Typography>
-            <input type="text" placeholder="search" />
-
+            <Link to="/search">
+           <SearchIcon></SearchIcon>
+              </Link>
             <Link to="/cart">
               <Badge color="secondary">
                 <ShoppingCartIcon />
@@ -30,9 +30,7 @@ const Topbar = () => {
         </AppBar>
       </Box>
       <div style={{ padding: "30px" }}>
-        <Carousal />
-        <ToysCart />
-        {/* <Outlet></Outlet> */}
+        <Outlet></Outlet>
       </div>
     </div>
   );

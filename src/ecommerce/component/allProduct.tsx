@@ -1,10 +1,12 @@
 import { Snackbar } from "@mui/material";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import SearchContext from "../../context/searchContext";
 import { Product } from "../../model/product.model";
-import { useCreateCartMutation, useGetDashboardProductQuery } from "../../services/ecommerce.service";
+import { useCreateCartMutation} from "../../services/ecommerce.service";
 
-const ToysCart = () => {
+const AllProduct = () => {
+  const {sort,range,category,freeTextSearch} = useContext(SearchContext);
     const [createCart] = useCreateCartMutation();
   const [state, setState] = useState({
     open: false,
@@ -12,7 +14,7 @@ const ToysCart = () => {
     horizontal: "center",
   });
   const { vertical, horizontal, open } = state;
-  const { data: productList } = useGetDashboardProductQuery();
+  const [productList,setProductList]=useState<Product[]>([])
   function addToCartHandler(product: Product | undefined) {
     if(product&&product.RecordID){
         createCart(product)
@@ -25,24 +27,44 @@ const ToysCart = () => {
     }
     setState({ ...{ vertical: "bottom", horizontal: "center" }, open: false });
   };
+  
+  useEffect(()=>{
+    const fetchDashboardProduct = async ()=>{
+      let queryArray:string[]=[];
+      let url='http://localhost:4000/DashboardProduct'
+      if(sort){
+        if(sort==="Name"){
+          queryArray.push(`_sort=Title&_order=asc`)
+        }
+        if(sort==="Price(Low to high)"){
+          queryArray.push(`_sort=Price&_order=asc`)
+        }
+        if(sort==="Price(High to low)"){
+          queryArray.push(`_sort=Price&_order=desc`)
+        }
+      }
+      // if(range&&range.length>0){
+      //   queryArray.push(`Price_gte=${range[0]}&Price_lte=${range[1]}`)
+      // }
+      if(category){
+        queryArray.push(`Category=${category}`)
+      }
+      if(freeTextSearch){
+        queryArray.push(`Title_like=${freeTextSearch}`)
+      }
+      if(queryArray.length>0){
+        url=url+"?"+queryArray.join("&")
+      }
+      
+      let data=await fetch(url);
+      let b=await data.json();
+      setProductList(b)
+    }
+    fetchDashboardProduct();
+  },[sort,range,category,freeTextSearch])
+
   return (
     <>
-      <div
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <div style={{ fontSize: "25px" }}>Product</div>
-        <div>
-        <Link to="/search">
-     <button type="button">
-          more
-     </button>
- </Link>
-        </div>
-      </div>
       <div style={{ display: "flex" }}>
         {productList && productList.length > 0
           ? productList.map((product, index) => (
@@ -52,7 +74,7 @@ const ToysCart = () => {
                 key={index}
               >
                 <img src={product.ImageUrl} alt="" />
-                <h3>{product.Title}</h3>
+                <h3>{product.Title} - {product.Price} cat:{product.Category}</h3>
                 <button onClick={() => addToCartHandler(product)}>
                   Add to cart
                 </button>
@@ -70,4 +92,4 @@ const ToysCart = () => {
     </>
   );
 };
-export default ToysCart;
+export default AllProduct;

@@ -1,12 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import CartContext from '../../context/CartContext';
 import { Product } from '../../model/product.model';
 import { useDeleteCartMutation, useGetCartQuery } from '../../services/ecommerce.service';
 import { currencyFormat } from '../../utility/currencyFormat';
 import './cart.scss';
 const Cart = () => {
-  const {setCartItem}=useContext(CartContext);
   const [subtotal,setSubTotal]=useState<number>(0)
     const {data:products,isLoading:productLoading,isFetching}=useGetCartQuery(undefined,{
         refetchOnMountOrArgChange:true
@@ -23,7 +21,6 @@ const Cart = () => {
       }
    }
    useEffect(()=>{
-    setCartItem(products?.length)
     calculateSubTotal(products)
    },[!isFetching])
   return (
