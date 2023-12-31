@@ -20,6 +20,19 @@ const Cart = () => {
         setSubTotal(subTotal)
       }
    }
+   const checkoutHandler=()=>{
+      let data={
+        OrderID:'1',
+        TotalAmount:subtotal,
+      }
+      fetch('http://localhost:4000/Checkout',{
+        method:'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify(data)
+      })
+   }
    useEffect(()=>{
     calculateSubTotal(products)
    },[!isFetching])
@@ -84,7 +97,7 @@ const Cart = () => {
           </div>
         </div>
 
-        <button className="checkout">Checkout</button>
+        <button className="checkout" onClick={checkoutHandler}>Checkout</button>
       </div>
     </div>
   );

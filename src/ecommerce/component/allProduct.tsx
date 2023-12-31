@@ -43,9 +43,9 @@ const AllProduct = () => {
           queryArray.push(`_sort=Price&_order=desc`)
         }
       }
-      // if(range&&range.length>0){
-      //   queryArray.push(`Price_gte=${range[0]}&Price_lte=${range[1]}`)
-      // }
+      if(range&&range.length>0){
+        queryArray.push(`Price_gte=${range[0]}&Price_lte=${range[1]}`)
+      }
       if(category){
         queryArray.push(`Category=${category}`)
       }
