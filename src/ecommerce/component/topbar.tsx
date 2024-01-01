@@ -18,6 +18,7 @@ const Topbar = () => {
                 </div>
               </Link>
             </Typography>
+           <Link to="/admin"> <button>Admin</button></Link>
             <Link to="/search">
            <SearchIcon></SearchIcon>
               </Link>

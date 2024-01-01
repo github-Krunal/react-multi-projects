@@ -1,5 +1,5 @@
 import { Snackbar } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Product } from "../../model/product.model";
 import { useCreateCartMutation, useGetDashboardProductQuery } from "../../services/ecommerce.service";
@@ -12,7 +12,19 @@ const ToysCart = () => {
     horizontal: "center",
   });
   const { vertical, horizontal, open } = state;
-  const { data: productList } = useGetDashboardProductQuery();
+  // const { data: productList } = useGetDashboardProductQuery();
+  const [productList,setProductList]=useState<Product[]>([])
+
+  useEffect(()=>{
+    const getAllDashboardProduct= async ()=>{
+        let data=await fetch('http://localhost:4000/DashboardProduct')
+        let product=await data.json();
+        setProductList(product)
+    }
+    getAllDashboardProduct();
+  },[])
+
+
   function addToCartHandler(product: Product | undefined) {
     if(product&&product.RecordID){
         createCart(product)

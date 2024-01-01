@@ -5,6 +5,7 @@ import AddProduct from './ecommerce/component/admincomponent/addProduct';
 import AdminMain from './ecommerce/component/admincomponent/adminmain';
 import Page1 from './ecommerce/component/admincomponent/page1';
 import Page2 from './ecommerce/component/admincomponent/page2';
+import ProductList from './ecommerce/component/admincomponent/productList';
 import Cart from './ecommerce/component/cart';
 import Home from './ecommerce/component/home';
 import ProductCart from './ecommerce/component/ProductCart';
@@ -23,6 +24,7 @@ function App() {
             <Route path="/admin" element={<AdminMain />} >
               <Route path='' element={<AddProduct/>}></Route>
               <Route path='add-product' element={<AddProduct/>}></Route>
+              <Route path='product-list' element={<ProductList/>}></Route>
               <Route path='page2' element={<Page2/>}></Route>
             </Route>
             <Route path="/search" element={<SearchProduct />} />

@@ -15,3 +15,22 @@
         height: 150px;
     }
 }
+.demTable {
+    border:1px solid #b3adad;
+    border-collapse:collapse;
+    padding:5px;
+    width: 100%;
+}
+.demTable th {
+    border:1px solid #b3adad;
+    padding:5px;
+    background: #f0f0f0;
+    color: #313030;
+}
+.demTable td {
+    border:1px solid #b3adad;
+    text-align:center;
+    padding:5px;
+    background: #ffffff;
+    color: #313030;
+}
