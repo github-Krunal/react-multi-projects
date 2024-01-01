@@ -6,9 +6,9 @@ import AdminMain from './ecommerce/component/admincomponent/adminmain';
 import Page1 from './ecommerce/component/admincomponent/page1';
 import Page2 from './ecommerce/component/admincomponent/page2';
 import ProductList from './ecommerce/component/admincomponent/productList';
+import UpdateProduct from './ecommerce/component/admincomponent/updateProduct';
 import Cart from './ecommerce/component/cart';
 import Home from './ecommerce/component/home';
-import ProductCart from './ecommerce/component/ProductCart';
 import ProductDetails from './ecommerce/component/productDetails';
 import SearchProduct from './ecommerce/component/searchProduct';
 import Topbar from './ecommerce/component/topbar';
@@ -25,6 +25,7 @@ function App() {
               <Route path='' element={<AddProduct/>}></Route>
               <Route path='add-product' element={<AddProduct/>}></Route>
               <Route path='product-list' element={<ProductList/>}></Route>
+              <Route path='update-product/:productID' element={<UpdateProduct/>}></Route>
               <Route path='page2' element={<Page2/>}></Route>
             </Route>
             <Route path="/search" element={<SearchProduct />} />

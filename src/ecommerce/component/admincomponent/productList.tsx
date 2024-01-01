@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Product } from "../../../model/product.model";
 
 const ProductList = () => {
@@ -43,6 +44,7 @@ const ProductList = () => {
                         <img src={product.ImageUrl} style={{width:'50px',height:'50px'}}/>
                     </td>
                     <td>
+                      <Link to={`/admin/update-product/${product.id}`}><button style={{marginRight:'10px'}}>edit</button></Link>
                         <button onClick={()=>deleteProductHandler(product)}>Delete</button>
                     </td>
                   </tr>
