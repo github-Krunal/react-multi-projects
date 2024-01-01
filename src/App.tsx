@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import AddProduct from './ecommerce/component/admincomponent/addProduct';
+import AdminDashboard from './ecommerce/component/admincomponent/adminDashboard';
 import AdminMain from './ecommerce/component/admincomponent/adminmain';
 import Page1 from './ecommerce/component/admincomponent/page1';
 import Page2 from './ecommerce/component/admincomponent/page2';
@@ -26,6 +27,7 @@ function App() {
               <Route path='add-product' element={<AddProduct/>}></Route>
               <Route path='product-list' element={<ProductList/>}></Route>
               <Route path='update-product/:productID' element={<UpdateProduct/>}></Route>
+              <Route path='dashboard' element={<AdminDashboard/>}></Route>
               <Route path='page2' element={<Page2/>}></Route>
             </Route>
             <Route path="/search" element={<SearchProduct />} />

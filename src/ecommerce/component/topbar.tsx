@@ -18,6 +18,7 @@ const Topbar = () => {
                 </div>
               </Link>
             </Typography>
+          <button style={{marginRight:'10px'}}>Login</button>
            <Link to="/admin"> <button>Admin</button></Link>
             <Link to="/search">
            <SearchIcon></SearchIcon>

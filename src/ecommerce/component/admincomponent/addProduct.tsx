@@ -1,14 +1,17 @@
 import { Field, Form, Formik } from "formik";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct=()=>{
-    const submitProduct=(product:any)=>{
-            fetch("http://localhost:4000/DashboardProduct", {
+  const navigate=useNavigate()
+    const submitProduct=async(product:any)=>{
+       let x=await     fetch("http://localhost:4000/DashboardProduct", {
               headers: {
                 "Content-Type": "application/json",
               },
               method: "post",
               body: JSON.stringify(product),
             });
+            navigate('/admin/product-list')
     }
     return (
         <div>

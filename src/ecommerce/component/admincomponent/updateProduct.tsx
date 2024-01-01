@@ -1,10 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Product } from "../../../model/product.model";
 
 const UpdateProduct=()=>{
-  const {productID}=useParams()
+  const {productID}=useParams();
+  const navigate=useNavigate()
   const [singleProduct,setSingleProduct]=useState<Product>()
 
 
@@ -16,17 +17,19 @@ const UpdateProduct=()=>{
     }
     fetchSingleProduct()
   },[productID])
-    const submitProduct=(product:any)=>{
-            fetch(`http://localhost:4000/DashboardProduct/${singleProduct?.id}`, {
+    const submitProduct=async (product:any)=>{
+         let x=await   fetch(`http://localhost:4000/DashboardProduct/${singleProduct?.id}`, {
               headers: {
                 "Content-Type": "application/json",
               },
               method: "PATCH",
               body: JSON.stringify(product),
             });
+            navigate('/admin/product-list')
     }
     return (
-        <div>
+        <div>{
+          singleProduct&&
              <Formik
         enableReinitialize
         initialValues={{
@@ -54,6 +57,7 @@ const UpdateProduct=()=>{
             <button type="submit"> submit</button>
             </Form>
             </Formik>
+            }
         </div>
     )
 }

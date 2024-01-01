@@ -4,6 +4,7 @@ const AdminMain = () => {
   return (
     <div style={{ position: "relative", minHeight: "600px" }}>
       <div className="sidenav">
+        <Link to={"dashboard"}>Dashboard</Link>
         <Link to={"add-product"}>Add Product</Link>
         <Link to={"product-list"}>Product List</Link>
       </div>
