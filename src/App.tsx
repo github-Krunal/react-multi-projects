@@ -9,6 +9,7 @@ import Page2 from './ecommerce/component/admincomponent/page2';
 import ProductList from './ecommerce/component/admincomponent/productList';
 import UpdateProduct from './ecommerce/component/admincomponent/updateProduct';
 import Cart from './ecommerce/component/cart';
+import Navbar from './ecommerce/component/global/navbar';
 import Home from './ecommerce/component/home';
 import ProductDetails from './ecommerce/component/productDetails';
 import SearchProduct from './ecommerce/component/searchProduct';
@@ -19,7 +20,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route element={<Topbar />}>
+          <Route element={<Navbar />}>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/admin" element={<AdminMain />} >

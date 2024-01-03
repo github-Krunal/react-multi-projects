@@ -1,11 +1,12 @@
-import Carousal from "./carousal";
-import ToysCart from "./toysCart";
+import DashboardBanner from "./customers/banner";
+
 
 const Home = () => {
   return (
     <div>
-      <Carousal />
-      <ToysCart />
+      <DashboardBanner/>
+      {/* <Carousal />
+      <ToysCart /> */}
     </div>
   );
 };
