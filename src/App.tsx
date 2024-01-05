@@ -4,6 +4,7 @@ import './App.css';
 import AddProduct from './ecommerce/component/admincomponent/addProduct';
 import AdminDashboard from './ecommerce/component/admincomponent/adminDashboard';
 import AdminMain from './ecommerce/component/admincomponent/adminmain';
+import BannerAdmin from './ecommerce/component/admincomponent/bannerAdmin';
 import Page1 from './ecommerce/component/admincomponent/page1';
 import Page2 from './ecommerce/component/admincomponent/page2';
 import ProductList from './ecommerce/component/admincomponent/productList';
@@ -29,6 +30,7 @@ function App() {
               <Route path='product-list' element={<ProductList/>}></Route>
               <Route path='update-product/:productID' element={<UpdateProduct/>}></Route>
               <Route path='dashboard' element={<AdminDashboard/>}></Route>
+              <Route path='banner' element={<BannerAdmin/>}></Route>
               <Route path='page2' element={<Page2/>}></Route>
             </Route>
             <Route path="/search" element={<SearchProduct />} />

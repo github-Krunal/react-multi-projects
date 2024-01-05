@@ -6,6 +6,7 @@ const AdminMain = () => {
       <div className="sidenav">
         <Link to={"dashboard"}>Dashboard</Link>
         <Link to={"add-product"}>Add Product</Link>
+        <Link to={"banner"}>Banner</Link>
         <Link to={"product-list"}>Product List</Link>
       </div>
       <div className="main">
