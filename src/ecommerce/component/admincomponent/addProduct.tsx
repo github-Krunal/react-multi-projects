@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 const AddProduct=()=>{
   const navigate=useNavigate()
     const submitProduct=async(product:any)=>{
-       let x=await     fetch("http://localhost:4000/DashboardProduct", {
+       await     fetch("http://localhost:4000/DashboardProduct", {
               headers: {
                 "Content-Type": "application/json",
               },

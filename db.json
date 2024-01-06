@@ -43,7 +43,11 @@
       "Price": 200,
       "Category": "TV",
       "ImageUrl": "https://rukminim2.flixcart.com/image/312/312/xif0q/television/9/c/v/-original-imagvgcgp2hgxs6n.jpeg?q=70",
-      "id": 1
+      "id": 1,
+      "Slogan": "100% organic food provider",
+      "BannerText": "Shop your daily grocery",
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-01.jpg?v=1692188609&width=2000",
+      "ShowOnSlider": false
     }
   ],
   "Checkout": [
@@ -53,35 +57,50 @@
       "id": 1
     }
   ],
-  "BannerSlider":[
+  "BannerSlider": [
     {
-      "Image":"https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-01.jpg?v=1692188609&width=2000",
-      "BannerText":"Shop your daily grocery ",
-      "Slogan":"100% organic food provider"
+      "Slogan": "100% organic food provider",
+      "BannerText": "Shop your daily grocery",
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-01.jpg?v=1692188609&width=2000",
+      "id": 1,
+      "ShowOnSlider": false,
+      "Type": "slider"
     },
     {
-      "Image":"https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-03.jpg?v=1692188609&width=2000",
-      "BannerText":"Fruites and vegitables",
-      "Slogan":"100% organic and fresh"
-
+      "Slogan": "100% organic and fresh",
+      "BannerText": "Fruites and vegitables",
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-03.jpg?v=1692188609&width=2000",
+      "id": 2,
+      "ShowOnSlider": true,
+      "Type": "slider"
+    }
+   
+  ],
+  "BannerSlider2": [
+    {
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-01.jpg?v=1692188609&width=2000",
+      "BannerText": "Shop your daily grocery ",
+      "Slogan": "100% organic food provider"
     },
     {
-      "Image":"https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-02.jpg?v=1692188609&width=2000",
-      "BannerText":"Shop your grocery daily",
-      "Slogan":"100% natural and premium"
-
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-03.jpg?v=1692188609&width=2000",
+      "BannerText": "Fruites and vegitables",
+      "Slogan": "100% organic and fresh"
     },
     {
-      "Image":"https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-banner-01.jpg?v=1692188608",
-      "BannerText":"Enjoy your coffee time",
-      "Slogan":"100% natural"
-
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-02.jpg?v=1692188609&width=2000",
+      "BannerText": "Shop your grocery daily",
+      "Slogan": "100% natural and premium"
     },
     {
-      "Image":"https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-banner-02.jpg?v=1692188608",
-      "BannerText":"Never ending energy drink",
-      "Slogan":"Herbal nutrition"
-
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-banner-01.jpg?v=1692188608",
+      "BannerText": "Enjoy your coffee time",
+      "Slogan": "100% natural"
+    },
+    {
+      "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-banner-02.jpg?v=1692188608",
+      "BannerText": "Never ending energy drink",
+      "Slogan": "Herbal nutrition"
     }
   ]
 }
