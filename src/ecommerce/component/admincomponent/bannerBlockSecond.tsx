@@ -1,8 +1,21 @@
+import { useEffect, useState } from "react"
+import { Banner } from "../model/banner.model"
+
 const BannerBlockSecond=()=>{
+  const [blockTwoList,setBlockTwoList]=useState<Banner[]>([])
+
+  useEffect(()=>{
+    const fetchData=async()=>{
+        let data=await fetch(`http://localhost:4000/BannerSlider?Type=Block2`)
+        let product=await data.json();
+        setBlockTwoList(product)
+    }
+    fetchData()
+},[])
     return (
         <div>
-            <h1 style={{marginTop:'30px'}}>Banner Block two</h1>
-                    <table className="demTable">
+            <h1 style={{marginTop:'30px'}}>Banner Block Two</h1>
+                    <table className="demTable" >
         <thead>
           <tr>
             <th>Slogan</th>
@@ -11,17 +24,21 @@ const BannerBlockSecond=()=>{
           </tr>
         </thead>
         <tbody>
-           <tr>
-            <td>
-            100% organic food provider
-            </td>
-            <td>
-            Shop your daily grocery
-            </td>
-            <td>
-            https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-01.jpg?v=1692188609&width=2000
-            </td>
-           </tr>
+        {blockTwoList &&
+              blockTwoList.map((slider,index) => (
+                <tr key={index}>
+                  <td>{slider.Slogan}</td>
+                  <td>{slider.BannerText}</td>
+                  <td><img src={slider.Image} alt=""  width={'80px'} height='80px'/></td>
+                  {/* <td>
+                  <Checkbox
+      checked={slider.ShowOnSlider}
+      onChange={()=>handleChange(index)}
+      inputProps={{ 'aria-label': 'controlled' }}
+    />
+                  </td> */}
+                </tr>
+              ))}
         </tbody>
                     </table>
         </div>

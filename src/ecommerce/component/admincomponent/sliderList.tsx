@@ -12,7 +12,7 @@ const SliderList=()=>{
     };
     useEffect(()=>{
         const fetchData=async()=>{
-            let data=await fetch('http://localhost:4000/BannerSlider')
+            let data=await fetch(`http://localhost:4000/BannerSlider?Type=slider`)
             let product=await data.json();
             setSliderList(product)
         }
@@ -47,7 +47,7 @@ const SliderList=()=>{
                 <tr key={index}>
                   <td>{slider.Slogan}</td>
                   <td>{slider.BannerText}</td>
-                  <td>{slider.Image}</td>
+                  <td><img src={slider.Image} alt=""  width={'80px'} height='80px'/></td>
                   <td>
                   <Checkbox
       checked={slider.ShowOnSlider}

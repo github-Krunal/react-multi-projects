@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import { Banner } from "../model/banner.model";
+
 const BannerBlockFirst=()=>{
+  const [blockOneList,setBlokcOneList]=useState<Banner[]>([])
+
+  useEffect(()=>{
+    const fetchData=async()=>{
+        let data=await fetch(`http://localhost:4000/BannerSlider?Type=Block1`)
+        let product=await data.json();
+        setBlokcOneList(product)
+    }
+    fetchData()
+},[])
     return (
         <div>
             <h1 style={{marginTop:'30px'}}>Banner Block one</h1>
@@ -11,17 +24,23 @@ const BannerBlockFirst=()=>{
           </tr>
         </thead>
         <tbody>
-           <tr>
-            <td>
-            100% organic food provider
-            </td>
-            <td>
-            Shop your daily grocery
-            </td>
-            <td>
-            https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-01.jpg?v=1692188609&width=2000
-            </td>
-           </tr>
+        {blockOneList &&
+              blockOneList.map((slider,index) => (
+                <tr key={index}>
+                  <td>{slider.Slogan}</td>
+                  <td>{slider.BannerText}</td>
+                  <td>
+                    <img src={slider.Image} alt=""  width={'80px'} height='80px'/>
+                    </td>
+                  {/* <td>
+                  <Checkbox
+      checked={slider.ShowOnSlider}
+      onChange={()=>handleChange(index)}
+      inputProps={{ 'aria-label': 'controlled' }}
+    />
+                  </td> */}
+                </tr>
+              ))}
         </tbody>
                     </table>
         </div>

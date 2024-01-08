@@ -34,3 +34,38 @@
     background: #ffffff;
     color: #313030;
 }
+.custom-button{
+    background: white;
+    padding: 12px 40px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 19px;
+}
+.categories-main{
+    width: 100px;
+    height: 100px;
+    background: #d5e7cc;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    img{
+        width: 68%;
+    }
+}
+.categories-main::after{
+    width: 120px;
+    height: 120px;
+    content: "";
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    border: 1px solid #343d30;
+    border-style: dashed;
+}
+.categories-name{
+    width: 120px;
+    margin-top: 20px;
+    font-size: 17px;
+    text-align: center;
+}
