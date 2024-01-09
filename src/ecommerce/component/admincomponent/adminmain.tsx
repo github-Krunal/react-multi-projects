@@ -8,6 +8,7 @@ const AdminMain = () => {
         <Link to={"add-product"}>Add Product</Link>
         <Link to={"banner"}>Banner</Link>
         <Link to={"product-list"}>Product List</Link>
+        <Link to={"categories"}>Category</Link>
       </div>
       <div className="main">
         <Outlet />

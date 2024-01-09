@@ -1,6 +1,7 @@
 import Advertise from "./customers/advertise";
 import DashboardBanner from "./customers/banner";
 import Categories from "./customers/categories";
+import DailyProducts from "./customers/dailyProducts";
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
       <DashboardBanner/>
       <Advertise/>
       <Categories/>
+      <DailyProducts/>
       </div>
       {/* <Carousal />
       <ToysCart /> */}

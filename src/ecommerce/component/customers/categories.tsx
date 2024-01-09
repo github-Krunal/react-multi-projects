@@ -14,11 +14,11 @@ const Categories = () => {
 
   return (
     <div>
-      <h1 style={{ fontWeight: "600", textAlign: "center", marginTop: "45px" }}>
+      <h1 style={{ fontWeight: "600", textAlign: "center", marginTop: "45px",marginBottom:'50px' }}>
         Love our categories
       </h1>
 
-      <div style={{ padding: "0 20px", display: "flex", gap: "25px" }}>
+      <div style={{ padding: "0 20px", display: "flex", gap: "48px" }}>
         {categoriesList &&
           categoriesList.length > 0 &&
           categoriesList.map((category,index) => (
