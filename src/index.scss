@@ -81,3 +81,15 @@
     cursor: pointer;
     margin-left: 10px;
 }
+
+.cart-btn{
+    background-color: #429519;
+    color: white;
+    padding: 4px 17px;
+    border-radius: 4px;
+    transition: 0.3s ease-in-out;
+    border: none;
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
