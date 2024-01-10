@@ -1,8 +1,22 @@
+import { useEffect, useState } from "react";
+import { TodaysProduct } from "../../../model/todaysProduct.model";
 import ProductCard from "../global/productCard";
 
 const DailyProducts = () => {
+  const [todaysProductList, setTodaysProductList] = useState<TodaysProduct[]>(
+    []
+  );
+  useEffect(() => {
+    const getAllDailyProduct = async () => {
+      const data = await fetch("http://localhost:4000/TodaysProduct");
+      const products: TodaysProduct[] = await data.json();
+      setTodaysProductList(products);
+    };
+    getAllDailyProduct();
+  }, []);
+
   return (
-    <div>
+    <>
       <div style={{ marginTop: "50px" }}>
         <div
           style={{
@@ -18,10 +32,13 @@ const DailyProducts = () => {
             <button className="categories-button">Vegetables</button>
           </div>
         </div>
-
-        <ProductCard />
-      </div>
-    </div>
+        <div style={{display:"flex",gap:'20px'}}>
+        {todaysProductList.length > 0 &&
+          todaysProductList.map((product, index) => (
+            <ProductCard product={product} key={index}/>
+          ))}
+          </div>
+      </div></>
   );
 };
 
