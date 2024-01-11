@@ -5,4 +5,5 @@ export class TodaysProduct{
     public CategoryType?:string;
     public SellingPrice?:string;
     public OriginalPrice?:string;
+    public Sale?:string;
 }

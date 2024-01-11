@@ -101,3 +101,31 @@
     gap: 10px;
     font-size: 18px;
 }
+.product-cart-icons{
+    height: 30px;
+    width: 30px;
+    background: white;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 7px #635b5b;
+    cursor: pointer;
+    visibility: hidden;
+}
+.product-cart:hover .product-cart-icons{
+visibility: visible;
+}
+.offer{
+    position: absolute;
+    z-index: 2;
+    left: 15px;
+    top: 10px;
+    background: red;
+    padding: 4px 7px 4px 7px;
+    color: white;
+    font-weight: 600;
+}

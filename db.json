@@ -169,7 +169,8 @@
       "ProductName":"Fresh watermelon",
       "CategoryType":"Fresh fruits",
       "SellingPrice":"300.00",
-      "OriginalPrice":"500.00"
+      "OriginalPrice":"500.00",
+      "Sale":"40%"
     },
     {
       "ImageUrl":"https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-02-b.jpg?v=1692169001&width=360",
