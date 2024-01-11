@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { TodaysProduct } from "../../../model/todaysProduct.model";
 import ProductCard from "../global/productCard";
+import Sale from "../hoc/sale";
 
 const DailyProducts = () => {
   const [todaysProductList, setTodaysProductList] = useState<TodaysProduct[]>(
@@ -35,7 +36,12 @@ const DailyProducts = () => {
         <div style={{display:"flex",gap:'20px'}}>
         {todaysProductList.length > 0 &&
           todaysProductList.map((product, index) => (
-            <ProductCard product={product} key={index}/>
+            <>
+            {
+              product.Sale?<Sale component={ProductCard} product={product} key={index}/>:
+              <ProductCard product={product} key={index}/>
+            }
+            </>
           ))}
           </div>
       </div></>
