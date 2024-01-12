@@ -6,6 +6,7 @@ import {
   Modal,
   Rating,
   Select,
+  Snackbar,
   TextField,
   Tooltip,
   Typography,
@@ -32,6 +33,22 @@ const ProductCard = (props: any) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [opensnackbar, setOpenSnackbar] = useState(false);
+
+  async function  onCardHandler(product:TodaysProduct){
+  await     fetch("http://localhost:4000/ProductCart", {
+               headers: {
+                 "Content-Type": "application/json",
+               },
+               method: "post",
+               body: JSON.stringify(product),
+             });
+             setOpenSnackbar(true)
+}
+  const handleCloseSnackbar=()=>{
+    setOpenSnackbar(false)
+
+  }
   return (
     <>
       <div className="product-cart" style={{ width: "300px", boxShadow: "0 0 10px #a9a3a3",position:'relative' }}>
@@ -63,10 +80,11 @@ const ProductCard = (props: any) => {
                 labelId="demo-select-small-label"
                 id="demo-select-small"
                 label="Weight"
+                defaultValue={'1kg'}
               >
-                <MenuItem value={10}>1kg</MenuItem>
-                <MenuItem value={20}>2kg</MenuItem>
-                <MenuItem value={30}>3kg</MenuItem>
+                <MenuItem value={'1kg'}>1kg</MenuItem>
+                <MenuItem value={'2kg'}>2kg</MenuItem>
+                <MenuItem value={'3kg'}>3kg</MenuItem>
               </Select>
             </FormControl>
 
@@ -102,7 +120,7 @@ const ProductCard = (props: any) => {
               </div>
             </div>
             <div>
-              <button className="cart-btn">
+              <button className="cart-btn"  onClick={()=>onCardHandler(product)}>
                 <ShoppingBagIcon />{" "}
                 <span
                   style={{
@@ -179,9 +197,9 @@ const ProductCard = (props: any) => {
             
             />
 
-<button className="cart-btn" style={{marginTop:"20px",width:"250px",display:"flex",justifyContent:"center"}}>
-                <ShoppingBagIcon />{" "}
-                <span
+<button className="cart-btn" style={{marginTop:"20px",width:"250px",display:"flex",justifyContent:"center"}} >
+                <ShoppingBagIcon/>{" "}
+                <span 
                   style={{
                     alignSelf: "center",
                     height: "12px",
@@ -195,6 +213,13 @@ const ProductCard = (props: any) => {
          </div>
         </Box>
       </Modal>
+      <Snackbar
+        open={opensnackbar}
+        autoHideDuration={6000}
+        message="Product added to cart"
+        onClose={handleCloseSnackbar}
+        
+      />
     </>
   );
 };

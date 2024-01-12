@@ -75,11 +75,18 @@
     border-radius: 26px;
     transition: .2s ease-in-out;
     margin: 5px 0;
-    background: #429519;
-    color: white;
+   
     border: 1px solid #429519;
     cursor: pointer;
     margin-left: 10px;
+}
+.selected-categories-button{
+    background: #429519;
+    color: white;
+}
+.unselected-categories-button{
+    background: white;
+    color: black;
 }
 
 .cart-btn{
@@ -92,6 +99,8 @@
     display: flex;
     align-items: center;
     height: 36px;
+    cursor: pointer;
+    
 }
 
 .navbar-actions{

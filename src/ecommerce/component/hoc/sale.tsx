@@ -1,7 +1,7 @@
 const Sale=(props:any)=>{
     return (
         <div style={{position:"relative"}}> 
-            <div className="offer">Sale 40%</div>
+            <div className="offer">Sale {props.product.Sale}%</div>
             <props.component product={props.product}/>
         </div>
     )
