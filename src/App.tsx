@@ -11,6 +11,7 @@ import Page2 from './ecommerce/component/admincomponent/page2';
 import ProductList from './ecommerce/component/admincomponent/productList';
 import UpdateProduct from './ecommerce/component/admincomponent/updateProduct';
 import Cart from './ecommerce/component/cart';
+import ShoppingCart from './ecommerce/component/customers/shoppingCart';
 import Navbar from './ecommerce/component/global/navbar';
 import Home from './ecommerce/component/home';
 import ProductDetails from './ecommerce/component/productDetails';
@@ -24,7 +25,7 @@ function App() {
         <Routes>
           <Route element={<Navbar />}>
             <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<ShoppingCart />} />
             <Route path="/admin" element={<AdminMain />} >
               <Route path='' element={<AddProduct/>}></Route>
               <Route path='add-product' element={<AddProduct/>}></Route>

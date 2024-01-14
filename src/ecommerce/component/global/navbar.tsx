@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import { Badge } from "@mui/material";
@@ -32,7 +32,7 @@ const Navbar = () => {
             <PersonAddAltIcon style={{ fontSize: "36px" }} />
             Login Account
           </div>
-          <div className="navbar-actions">
+          <Link to={'/cart'}>   <div className="navbar-actions">
             <Badge
               badgeContent={4}
               color="secondary"
@@ -40,11 +40,11 @@ const Navbar = () => {
             >
               <AddShoppingCartIcon color="action" style={{ color: "white" }} />
             </Badge>
-            <div style={{ marginLeft: "5px", fontSize: "14px" }}>
+           <div style={{ marginLeft: "5px", fontSize: "14px" }}>
               <h4>cart</h4>
               <h4>RS. 2,300.00</h4>
             </div>
-          </div>
+          </div></Link>
         </div>
       </div>
 

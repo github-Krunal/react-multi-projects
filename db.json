@@ -184,16 +184,6 @@
     }
   ],
   "ProductCart": [
-    {
-      "ImageUrl": "https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-02-b.jpg?v=1692169001&width=360",
-      "ProductName": "Fresh broccoli",
-      "CategoryType": "Fresh vegetables",
-      "SellingPrice": "900.00",
-      "OriginalPrice": "1200.00",
-      "Sale": "",
-      "Category": "Vegetables",
-      "id": 1
-    }
   ],
   "wishlist": []
 }
