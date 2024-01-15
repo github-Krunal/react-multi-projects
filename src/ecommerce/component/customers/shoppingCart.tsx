@@ -45,7 +45,26 @@ const ShoppingCart=()=>{
                 </div>
                </div>
                <div style={{width:"30%"}}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi amet dolorem dolores voluptates dolore delectus pariatur porro velit autem. Minima odio animi natus eaque magni harum aspernatur, vel mollitia dolore officiis porro perspiciatis quod ipsam provident aliquam beatae dignissimos praesentium molestias eos minus. Sunt perspiciatis rem officia, voluptates est dolorem quis reiciendis dolore nam nostrum earum. Officiis facilis corrupti ut repellendus velit unde doloremque, inventore sequi, itaque ipsa accusantium eius dolores voluptates in at nihil dolorem corporis enim atque rerum similique obcaecati! Animi laborum molestias exercitationem est, dicta doloremque provident quis sed. Voluptatum inventore voluptas laborum. Magni nostrum aspernatur iusto expedita, voluptatibus fugit doloribus sint. Dicta rerum reiciendis quis! Deleniti quidem est natus reiciendis, magnam, sed architecto, amet a ducimus maxime similique officiis debitis consectetur. Doloribus quia ipsum quisquam laborum eum ipsa, sapiente voluptate perferendis, impedit amet architecto ab obcaecati ratione non aspernatur deleniti molestiae beatae blanditiis? Corporis porro ratione provident eaque voluptatibus dolore delectus quos vitae quisquam. Vitae minima adipisci optio debitis! Magnam iste nisi modi maiores ut odio animi aliquid, aspernatur reprehenderit eum enim vitae aliquam unde, quae et qui. Suscipit voluptate quia voluptas delectus! Consectetur, exercitationem voluptatum magni, fugiat maxime voluptatibus odit omnis quo, architecto aliquid nihil!
+                    <div>
+                        <h2>Order Details</h2>
+
+                        <div style={{marginTop:"10px",display:"flex",justifyContent:"space-between"}}>
+                            <div>SubTotal(2)</div>
+                            <div>$334</div>
+                        </div>
+                        <div style={{marginTop:"10px",display:"flex",justifyContent:"space-between"}}>
+                            <div>Shipping Fee</div>
+                            <div>$334</div>
+                        </div>
+
+                        <div style={{marginTop:"10px",display:"flex",justifyContent:"space-between"}}>
+                            <div>Grand Total</div>
+                            <div>$334</div>
+                        </div>
+
+
+                        <button style={{marginTop:"10px",width:"100%",height:"50px",color:"white",background:"black"}}>Proceed Payment</button>
+                    </div>
                </div>
                </div>
             </div>

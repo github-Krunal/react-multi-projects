@@ -17,12 +17,12 @@ const Navbar = () => {
           justifyContent: "space-between",
         }}
       >
-        <div style={{ paddingLeft: "30px" }}>
+       <Link to={"/"}> <div style={{ paddingLeft: "30px" }}>
           <img
             src="https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-logo-white.svg?v=1692188608"
             alt=""
           />
-        </div>
+        </div></Link>
         <div style={{ display: "flex" }}>
           <div className="navbar-actions">
             <FavoriteBorderIcon style={{ fontSize: "36px" }} />
