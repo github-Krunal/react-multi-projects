@@ -3,7 +3,7 @@ export class TodaysProduct{
     public ImageUrl?:string;
     public ProductName?:string;
     public CategoryType?:string;
-    public SellingPrice?:string;
+    public SellingPrice?:number;
     public OriginalPrice?:string;
     public Sale?:string;
 }

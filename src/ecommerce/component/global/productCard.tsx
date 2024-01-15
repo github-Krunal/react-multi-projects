@@ -17,6 +17,9 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useState } from "react";
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "../../../redux/slices/cartSlice";
+import { RootState } from "../../../redux/store";
 const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
@@ -34,6 +37,8 @@ const ProductCard = (props: any) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [opensnackbar, setOpenSnackbar] = useState(false);
+  const {Price,TotalItem}=useSelector((state:RootState)=>state.cart);
+  const dispatch=useDispatch()
 
   async function  onCardHandler(product:TodaysProduct){
   await     fetch("http://localhost:4000/ProductCart", {
@@ -43,12 +48,23 @@ const ProductCard = (props: any) => {
                method: "post",
                body: JSON.stringify(product),
              });
+             calculateItemTotal(product)
              setOpenSnackbar(true)
+}
+function calculateItemTotal(product:TodaysProduct){
+  let item={
+      TotalItem:TotalItem,
+      Price:Price
+  }
+  item.TotalItem=TotalItem+1;
+  item.Price=Price+(product.SellingPrice?product.SellingPrice:0);
+  dispatch(addItem(item))
 }
   const handleCloseSnackbar=()=>{
     setOpenSnackbar(false)
 
   }
+
   return (
     <>
       <div className="product-cart" style={{ width: "300px", boxShadow: "0 0 10px #a9a3a3",position:'relative' }}>

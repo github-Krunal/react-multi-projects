@@ -2,9 +2,11 @@ import { Link, Outlet } from "react-router-dom";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import { Badge } from "@mui/material";
-import MailIcon from "@mui/icons-material/Mail";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
 const Navbar = () => {
+  const {Price,TotalItem}=useSelector((state:RootState) => state.cart)
   return (
     <div>
       <div
@@ -34,15 +36,15 @@ const Navbar = () => {
           </div>
           <Link to={'/cart'}>   <div className="navbar-actions">
             <Badge
-              badgeContent={4}
+              badgeContent={TotalItem}
               color="secondary"
               style={{ color: "white", fontSize: "50px" }}
             >
               <AddShoppingCartIcon color="action" style={{ color: "white" }} />
             </Badge>
-           <div style={{ marginLeft: "5px", fontSize: "14px" }}>
+           <div style={{ marginLeft: "5px", fontSize: "14px",color:"white" }}>
               <h4>cart</h4>
-              <h4>RS. 2,300.00</h4>
+              <h4>RS. {Price}</h4>
             </div>
           </div></Link>
         </div>
