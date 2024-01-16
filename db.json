@@ -41,13 +41,19 @@
     {
       "Title": "sonytv23",
       "Price": 200,
-      "Category": "TV",
-      "ImageUrl": "https://rukminim2.flixcart.com/image/312/312/xif0q/television/9/c/v/-original-imagvgcgp2hgxs6n.jpeg?q=70",
+      "Category": "Vegetables",
+      "ImageUrl": "https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-02-b.jpg?v=1692169001&width=360",
       "id": 1,
       "Slogan": "100% organic food provider",
       "BannerText": "Shop your daily grocery",
       "Image": "https://hongotheme.myshopify.com/cdn/shop/files/demo-grocery-slider-img-01.jpg?v=1692188609&width=2000",
-      "ShowOnSlider": false
+      "ShowOnSlider": false,
+      "ProductName": "Fresh broccoli",
+      "CategoryType": "Fresh vegetables",
+      "SellingPrice": 900,
+      "OriginalPrice": "1200.00",
+      "Sale": "",
+      "NumberOfItems": 2
     }
   ],
   "Checkout": [
@@ -168,7 +174,7 @@
       "ImageUrl": "https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-01.jpg?v=1692168983&width=360",
       "ProductName": "Fresh watermelon",
       "CategoryType": "Fresh fruits",
-      "SellingPrice": 300.00,
+      "SellingPrice": 300,
       "OriginalPrice": "500.00",
       "Sale": "40",
       "Category": "Fruits"
@@ -177,7 +183,7 @@
       "ImageUrl": "https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-02-b.jpg?v=1692169001&width=360",
       "ProductName": "Fresh broccoli",
       "CategoryType": "Fresh vegetables",
-      "SellingPrice": 900.00,
+      "SellingPrice": 900,
       "OriginalPrice": "1200.00",
       "Sale": "",
       "Category": "Vegetables"
@@ -188,31 +194,23 @@
       "ImageUrl": "https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-02-b.jpg?v=1692169001&width=360",
       "ProductName": "Fresh broccoli",
       "CategoryType": "Fresh vegetables",
-      "SellingPrice":900.00,
+      "SellingPrice": 900,
       "OriginalPrice": "1200.00",
       "Sale": "",
       "Category": "Vegetables",
-      "id": 1
-    },
-    {
-      "ImageUrl": "https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-02-b.jpg?v=1692169001&width=360",
-      "ProductName": "Fresh broccoli",
-      "CategoryType": "Fresh vegetables",
-      "SellingPrice": 900.00,
-      "OriginalPrice": "1200.00",
-      "Sale": "",
-      "Category": "Vegetables",
-      "id": 2
+      "id": 1,
+      "NumberOfItems": 3
     },
     {
       "ImageUrl": "https://hongotheme.myshopify.com/cdn/shop/products/grosery-product-01.jpg?v=1692168983&width=360",
       "ProductName": "Fresh watermelon",
       "CategoryType": "Fresh fruits",
-      "SellingPrice": 300.00,
+      "SellingPrice": 300,
       "OriginalPrice": "500.00",
       "Sale": "40",
       "Category": "Fruits",
-      "id": 3
+      "NumberOfItems": 3,
+      "id": 2
     }
   ],
   "wishlist": []
